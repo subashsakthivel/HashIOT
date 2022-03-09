@@ -10,7 +10,7 @@ const main = async () => {
 
   console.log("HashIOT deployed to:", hashIOT.address);
 }
-
+ 
 const runMain = async () => {
   try {
     await main();
@@ -21,6 +21,5 @@ const runMain = async () => {
     process.exit(1);
   }
 }
-
 
 runMain();

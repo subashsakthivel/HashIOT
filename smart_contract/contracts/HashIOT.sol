@@ -8,7 +8,8 @@ pragma solidity ^0.8.0;
 /// @dev Explain to a developer any extra details
 
 contract HashIOT {
-    event LogNode(address indexed owner, uint indexed mac, bool state);
+
+    event LogNode(address owner, uint indexed mac, bool state, bytes32 dataSet);
 
     uint256 public transactionCount;
 
@@ -16,39 +17,46 @@ contract HashIOT {
         uint port;
         bool state;
         address owner;
+        bytes32 dataSet;
         uint256 transactionCount;
     }
 
     mapping (uint => Node) public nodes_mac;
-
-
-
-    function RegisterNewNode(uint _mac, uint _port) external {
+    
+    
+    function RegisterNewNode(uint _mac, uint _port, string memory _data) external {
         transactionCount += 1;
-        Node memory newNode = Node(_port,false,msg.sender,transactionCount);
+        bytes32 _dataSet = keccak256(abi.encodePacked(_data));
+        Node memory newNode = Node(_port,false,msg.sender,_dataSet,transactionCount);
         nodes_mac[_mac] = newNode;
-        emit LogNode(newNode.owner, _mac, newNode.state);
+        emit LogNode(newNode.owner, _mac, newNode.state,_dataSet);
     }
-
-    function UpdateNode(uint _mac, uint _port) external {
-        Node storage node = nodes_mac[_mac];
-        node.port = _port;
-        node.state = !node.state;
-        node.owner = msg.sender;
-        node.transactionCount += 1;
-        emit LogNode(node.owner, _mac, node.state);
+    
+    function ChangePort(uint _mac, uint _port) external {
+        nodes_mac[_mac].port = _port;
+        emit LogNode(msg.sender, _mac, nodes_mac[_mac].state,nodes_mac[_mac].dataSet);
     }
-
+    
+    function ChangeState(uint _mac) external {
+        nodes_mac[_mac].state = !nodes_mac[_mac].state;
+        emit LogNode(msg.sender, _mac, nodes_mac[_mac].state,nodes_mac[_mac].dataSet);
+    }
+    
+    function ChangeData(uint _mac, string memory _data) external {
+        nodes_mac[_mac].dataSet = keccak256(abi.encodePacked(_data));
+        emit LogNode(msg.sender, _mac, nodes_mac[_mac].state,nodes_mac[_mac].dataSet);
+    }
+    
     function RevokeNode(uint _mac) external {
-
-        emit LogNode(address(0), _mac, false);
+        emit LogNode(address(0), _mac, false,0x0);
         delete nodes_mac[_mac];
     }
-
-    function getDetails(uint _mac) public view returns (uint , bool, address ){
+    
+    function getDetails(uint _mac) public view returns (uint , bool, address, bytes32){
         return (
             nodes_mac[_mac].port,
             nodes_mac[_mac].state,
-            nodes_mac[_mac].owner);
+            nodes_mac[_mac].owner,
+            nodes_mac[_mac].dataSet);
     }
 }
