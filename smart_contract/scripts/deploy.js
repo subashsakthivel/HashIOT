@@ -3,12 +3,12 @@ const hre = require("hardhat");
 
 const main = async () => {
 
-  const HashIOT = await hre.ethers.getContractFactory("HashIOT");
-  const hashIOT = await HashIOT.deploy();
+  const IOTcontract = await hre.ethers.getContractFactory("IOTcontract");
+  const IOTCONTRACT = await IOTcontract.deploy();
 
-  await hashIOT.deployed();
+  await IOTCONTRACT.deployed();
 
-  console.log("HashIOT deployed to:", hashIOT.address);
+  console.log("IOTCONTRACT deployed to:", IOTCONTRACT.address);
 }
  
 const runMain = async () => {

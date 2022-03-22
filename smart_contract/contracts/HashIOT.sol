@@ -22,7 +22,7 @@ contract HashIOT {
     }
 
     mapping (uint => Node) public nodes_mac;
-    
+
     
     function RegisterNewNode(uint _mac, uint _port, string memory _data) external {
         transactionCount += 1;
@@ -30,21 +30,6 @@ contract HashIOT {
         Node memory newNode = Node(_port,false,msg.sender,_dataSet,transactionCount);
         nodes_mac[_mac] = newNode;
         emit LogNode(newNode.owner, _mac, newNode.state,_dataSet);
-    }
-    
-    function ChangePort(uint _mac, uint _port) external {
-        nodes_mac[_mac].port = _port;
-        emit LogNode(msg.sender, _mac, nodes_mac[_mac].state,nodes_mac[_mac].dataSet);
-    }
-    
-    function ChangeState(uint _mac) external {
-        nodes_mac[_mac].state = !nodes_mac[_mac].state;
-        emit LogNode(msg.sender, _mac, nodes_mac[_mac].state,nodes_mac[_mac].dataSet);
-    }
-    
-    function ChangeData(uint _mac, string memory _data) external {
-        nodes_mac[_mac].dataSet = keccak256(abi.encodePacked(_data));
-        emit LogNode(msg.sender, _mac, nodes_mac[_mac].state,nodes_mac[_mac].dataSet);
     }
     
     function RevokeNode(uint _mac) external {

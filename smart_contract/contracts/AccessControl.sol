@@ -19,7 +19,7 @@ contract AccessControl {
     //0x2db9fd3d099848027c2383d0a083396f6c41510d7acfd92adc99b6cffcf31e96
     bytes32 private constant USER = keccak256(abi.encodePacked("USER"));
 
-    modifier onlyRole(bytes32 _role) virtual{
+    modifier onlyRole(bytes32 _role) virtual {
         require(roles[_role][msg.sender], "not autherized");
         _;
     }
@@ -27,6 +27,7 @@ contract AccessControl {
     constructor(address _admin) {
         _grantRole(ADMIN, _admin);
     }
+    
     function _grantRole(bytes32 _role, address _account) internal {
         roles[_role][_account] = true;
         emit GrantRole(_role,_account);
