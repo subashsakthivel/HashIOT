@@ -1,0 +1,185 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "device",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "mac",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "port",
+						"type": "uint256"
+					}
+				],
+				"name": "GrantIOT",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "device",
+						"type": "address"
+					}
+				],
+				"name": "RevokeIOT",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_mac",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_port",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_deviceAddress",
+						"type": "address"
+					}
+				],
+				"name": "RegisterDevice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "RevokeDevice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_account",
+						"type": "address"
+					}
+				],
+				"name": "changeOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getIOTs",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "name",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "mac",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "port",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "deviceAddress",
+								"type": "address"
+							}
+						],
+						"internalType": "struct IoTash.IoT[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IoTash.sol": "IoTash"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IoTash.sol": {
+			"keccak256": "0x94096e04b3b7a30ca77c65ffb1267f354b8a792c6239a8f8607647a63191bd8c",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://b22e9b4a47a2b2294849b3d8a2c3e40eccda4a43b2e934407fa9ffcff4471711",
+				"dweb:/ipfs/QmWUnAi7Ztzj4p3u9EPbhs2Yx6JjCJe7C2fxqjfVSPZXAR"
+			]
+		}
+	},
+	"version": 1
+}
