@@ -58,6 +58,45 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "IOTaccess",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "name",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "mac",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "port",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "deviceAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "bytes32",
 						"name": "_name",
 						"type": "bytes32"
@@ -173,11 +212,11 @@
 	},
 	"sources": {
 		"contracts/IoTash.sol": {
-			"keccak256": "0x94096e04b3b7a30ca77c65ffb1267f354b8a792c6239a8f8607647a63191bd8c",
+			"keccak256": "0x304b8710905325177e6e8802935d3fde145611f4d8fc2c36e13ad3f66b391f04",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://b22e9b4a47a2b2294849b3d8a2c3e40eccda4a43b2e934407fa9ffcff4471711",
-				"dweb:/ipfs/QmWUnAi7Ztzj4p3u9EPbhs2Yx6JjCJe7C2fxqjfVSPZXAR"
+				"bzz-raw://8b716b76f1caf094092ae9675ea2e10f0ad042b85b99e0e5635796914ec1d188",
+				"dweb:/ipfs/QmU6yFh6AUNac9jfL3vVu5PxYgPVftLH56RgW9sn7m8y7b"
 			]
 		}
 	},

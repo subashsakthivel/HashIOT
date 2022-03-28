@@ -53,7 +53,7 @@ export const WEB3Provider = ({ children }) => {
             else
             console.log("You are bro");
         });
-        await iotashContractInstance.methods.IOTaccess(index).call()
+        await iotashContractInstance.methods.IOTaccess(address, index).call()
         .then(function(result) 
         {
             console.log(result);
