@@ -1,8 +1,16 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
+<<<<<<< HEAD
 contract IoTash {            
     event GrantIOT(address indexed device, bytes32 name, bytes32 mac, uint port );
+||||||| dd6120f
+contract IoTash {
+    event GrantIOT(uint indexed index,bytes32 name, bytes32 mac, uint port , address indexed device);
+=======
+contract IoTash {
+    event GrantIOT(address indexed device, bytes32 name, bytes32 mac, uint port );
+>>>>>>> b107fd996af08b8bf7215bcf1e0e37614546c9d7
     event RevokeIOT(address indexed owner ,address indexed device);
 
 
@@ -13,7 +21,15 @@ contract IoTash {
         address deviceAddress;
     }
 
+<<<<<<< HEAD
     mapping (address => IoT[]) private IOTaccess;
+||||||| dd6120f
+    mapping (address => uint) public INDEX;
+
+    mapping (address => IoT[]) public IOTaccess;
+=======
+    mapping (address => IoT[]) public IOTaccess;
+>>>>>>> b107fd996af08b8bf7215bcf1e0e37614546c9d7
     
     function RegisterDevice(bytes32 _name, bytes32 _mac, uint _port , address _deviceAddress) external {
         IoT memory device = IoT(_name, _mac, _port , _deviceAddress);
