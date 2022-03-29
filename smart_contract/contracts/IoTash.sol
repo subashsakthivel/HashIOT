@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-contract IoTash {
+contract IoTash {            
     event GrantIOT(address indexed device, bytes32 name, bytes32 mac, uint port );
     event RevokeIOT(address indexed owner ,address indexed device);
 

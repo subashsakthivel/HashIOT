@@ -29,8 +29,8 @@ export default function Remote(props) {
   return (
     <div className='device'>
           <p value={props.index} className="device-name" onClick={iotSwitch}>{props.name} </p>
-          <p value={props.index} className='remove' onClick={removeIOT}><FontAwesomeIcon icon={faTrash}/></p>
-          <span id={props.index} className="access-denied"></span>
+          {props.visible && <p value={props.index} className='remove' onClick={removeIOT}><FontAwesomeIcon icon={faTrash}/></p>}
+          {/* <span id={props.index} className="access-denied"></span> */}
     </div>
   )
 }

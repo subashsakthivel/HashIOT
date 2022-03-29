@@ -8,6 +8,7 @@
 }
 .body {
   font-family: monospace;
+  background-color: black;
 }
 .menu {
   position: sticky;
@@ -19,7 +20,7 @@
   align-items: center;
 }
 nav{
-  background-color: #C4C4C4;
+  background-color: #172133;
   width: 100%;
   height: 80px;
 }
@@ -41,6 +42,7 @@ nav ul li {
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
+  border-bottom: 0.5px solid #24272756;
 }
 
 nav ul li a {
@@ -92,7 +94,7 @@ a.active {
     position: fixed;
     width: 50%;
     height: 100vh;
-    background-color: #C4C4C4;
+    background-color: #333e52e0;
     top: 80px;
     left: -100%;
     text-align: center;
@@ -197,10 +199,12 @@ section {
 }
 .add-iot {
   width: 80%;
-  background-color: #C4C4C4;
+  background-color: #16294db4;
   border-radius: 10px;
   margin: 40px;
+  color:white;
   padding: 20px;
+  text-transform: uppercase;
   
 }
 
@@ -235,11 +239,13 @@ section {
 }
 
 .connect-wallet {
-  padding : 5px;
+  padding : 10px;
+  font-size: large;
   background-color: blue;
-  border : 2px solid rgb(233, 203, 203);
+  border : 2px solid rgb(56, 50, 50);
   color: white;
   cursor: pointer;
+  margin: 40%;
 }
 
 .access-denied {
@@ -249,9 +255,67 @@ section {
 }
 
 .role:active{
-  background:olive;
+  background:rgb(21, 8, 82);
 }
 
 .role:focus{
-  background:burlywood;
+  color: white;
+  background:rgb(15, 42, 83);
+}
+
+
+a {
+  color: #2196f3;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+
+
+a:hover {
+  color: #dce3e9;
+  background: #2b348ad3;
+  box-shadow: 0 0 5px #2196f3, 0 0 20px #2196f3, 0 0 80px #2196f3;
+}
+.shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #0f11134d;
+  -webkit-box-shadow: 3px 3px 5px 6px #151a1d4d;
+  box-shadow:         3px 3px 5px 6px #1314149d;
+}
+
+.account {
+  padding : 10px;
+  color:#fffefe;
+  background-color: #1d3e58;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: larger;
+  border: 0.025;
+}
+
+.btn-intro {
+  font-size: x-large;
+  letter-spacing: 2px;
+}
+.btn-mem{
+  cursor: pointer;
+  min-height: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(60, 131, 60);
+}
+.fi {
+  margin: 20px;
+  min-height: 50px;
+}
+.btn-rm{
+  border-radius: 0.25;
+  cursor: pointer;
+  color: rgb(248, 73, 73);
+  font-weight: 200;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.device{
+  color: rgb(26, 25, 65);
 }

@@ -29,8 +29,8 @@ function GrantRole() {
   //handleForm({role:'',address:''});
 
   return (
-      <div className='centering'>
-        <div className='add-member'>
+      <div className='centering '>
+        <div className='add-member add-iot shadow'>
             <div className='add-mem-detail'>
                 <label htmlFor='address'>Address</label><br></br>
                 <input type={"text"} id={"address"} name="address" onChange={handlechange}/><br></br>
@@ -38,7 +38,7 @@ function GrantRole() {
                 <button className='btn1 role' name="role"  value={ADMIN} onClick={handlechange} >Admin</button>
                 <button className='btn2 role' name="role"  value={USER} onClick={handlechange}>User</button>
             </div>
-            <button className='btn-intro' onClick={handleSubmit}>Introduce</button>
+            <button className='btn-intro role btn-mem btn-light' onClick={handleSubmit}>ADD MEMBER</button>
         </div>
       </div>
   )

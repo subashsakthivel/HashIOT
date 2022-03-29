@@ -6,6 +6,7 @@ import RevokeRole from "./components/menu-components/RevokeRole";
 import ChangeOwnerShip from "./components/menu-components/ChangeOwnership";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Menu from "./components/Menu";
+import RemoveIOT from "./components/menu-components/RemoveIOT";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/grantrole" element={<GrantRole/>}/>
         <Route path="/revokerole" element={<RevokeRole/>}/>
         <Route path="/change-ownership" element={<ChangeOwnerShip/>}/>
+        <Route path="/remove-iot" element={<RemoveIOT/>}/>
       </Routes>
     </Router>
   );

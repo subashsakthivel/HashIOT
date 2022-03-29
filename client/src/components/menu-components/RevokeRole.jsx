@@ -30,7 +30,7 @@ function RemoveMember() {
 
   return (
     <div>
-       <div className='add-member'>
+       <div className='add-member add-iot shadow'>
             <div className='add-mem-detail'>
                 <label htmlFor='address'>Address</label><br></br>
                 <input type={"text"} id={"address"} name="address" onChange={handlechange}/><br></br>
@@ -38,7 +38,7 @@ function RemoveMember() {
                 <button className='btn1 role' name="role" onClick={handlechange} value={ADMIN}>Admin</button>
                 <button className='btn2 role' name="role" onClick={handlechange} value={USER}>User</button>
             </div>
-            <button className='btn-intro' onClick={handleSubmit }>Say Bye!</button>
+            <button className='btn-rm btn-intro btn-light' onClick={handleSubmit }>Remove Member</button>
         </div> 
     </div>
   )

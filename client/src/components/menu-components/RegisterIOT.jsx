@@ -27,17 +27,17 @@ function RegisterIOT() {
 
   return (
       <div className='add-iot-com'>
-        <div className='add-iot'>
-            <label htmlFor='name'>Name</label>
+        <div className='add-iot shadow'>
+            <label htmlFor='name'>Name</label>   
             <input type={"text"} id={"name"} name="name" onChange={handlechange}/><br></br>
-            <label htmlFor='mac'>Mac</label>
+            <label htmlFor='mac'>MAC</label>
             <input type={"text"} id={"mac"} name="mac" onChange={handlechange}/><br></br>
             <label htmlFor='port'>Port</label>
             <input type={"number"} id={"port"} name="port" onChange={handlechange}/><br></br>
-            <label htmlFor='deviceAddress'>Device Address</label>
+            <label htmlFor='deviceAddress'>Device chain Address</label>
             <input type={"address"} id={"deviceAddress"} name="deviceAddress" onChange={handlechange}/><br></br>
         </div>
-        <button className='btn-intro' type='button' onClick={handleSubmit}>Introduce</button>
+        <button className='btn-intro btn-light' type='button' onClick={handleSubmit}>ADD DEVICES</button>
       </div>
     
   )

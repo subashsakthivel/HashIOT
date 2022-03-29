@@ -11,13 +11,14 @@ function Menu() {
             <label htmlFor="check" className='checkbtn' >
             <FontAwesomeIcon icon={faBars}/>
             </label>
-            <label className='logo'>HashBlox</label>
+            <label className='logo'>Techgium</label>
             <ul>
-                <li><a href="/" className='active'>Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href='/register-iot'>Register IOT</a></li>
                 <li><a href="/grantrole">Grant Role</a></li>
                 <li><a href="/revokerole">Revoke Role</a></li>
                 <li><a href="/change-ownership">Change OwnerShip</a></li>
+                <li><a href="/remove-iot">Remove IOT devices</a></li>
             </ul>
         </nav>
     </div>

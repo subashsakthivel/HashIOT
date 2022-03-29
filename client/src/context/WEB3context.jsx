@@ -41,6 +41,13 @@ export const WEB3Provider = ({ children }) => {
 
         setAccessControlContractInstance(AccessControl_contract);
         setIOTashContractInstance(IOTash_contract)
+
+        await IOTash_contract.methods.getIOTs().call()
+        .then(function(result){
+            console.log(result);
+            setDevices(result);
+            console.log(Devices);
+        });
     }
     
     const checkAccessAbility = async (role, address,index) => {
@@ -139,14 +146,14 @@ export const WEB3Provider = ({ children }) => {
         });
     }
 
-    const IOTDevices = async () => {
-        await iotashContractInstance.methods.getIOTs().call()
-        .then(function(result){
-            console.log(result);
-            setDevices(result);
-            console.log(Devices);
-        });
-    }
+    // const IOTDevices = async () => {
+    //     await iotashContractInstance.methods.getIOTs().call()
+    //     .then(function(result){
+    //         console.log(result);
+    //         setDevices(result);
+    //         console.log(Devices);
+    //     });
+    // }
 
     const ChangeOwnerShipTrans = async (address , connectedAccount) => {
         await iotashContractInstance.methods.changeOwnership(address).send({from: connectedAccount})
@@ -165,14 +172,14 @@ export const WEB3Provider = ({ children }) => {
         });
     }
 
-   // IOTDevices();
+
 
     useEffect(() => {
         hash();
     },[]);
 
     return (
-        <WEB3context.Provider value={{ web3, IOTDevices, ChangeOwnerShipTrans, checkAccessAbility , currentAccount ,RegisterIOTTrans,GrantRoleTrans, RevokeRoleTrans, RemoveIOTTrans, Devices }}>
+        <WEB3context.Provider value={{ web3, ChangeOwnerShipTrans, checkAccessAbility , currentAccount ,RegisterIOTTrans,GrantRoleTrans, RevokeRoleTrans, RemoveIOTTrans, Devices }}>
             {children}
         </WEB3context.Provider>
     );

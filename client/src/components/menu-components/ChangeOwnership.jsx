@@ -29,13 +29,13 @@ function ChangeOwnership() {
 
 
   return (
-      <div className='centering'>
-        <div className='add-member'>
+      <div className='centering '>
+        <div className='add-member add-iot shadow'>
             <div className='add-mem-detail'>
             <label htmlFor='address'>Next Owner Address</label>
             <input type={"text"} id={"address"} name="address" onChange={handlechange}/><br></br>
             </div>
-            <button className='btn-intro' onClick={handleSubmit}>OwnerShip Change</button>
+            <button className=' fi btn-rm btn-intro btn-light' onClick={handleSubmit}>Change Ownership</button>
         </div>
       </div>
   )
